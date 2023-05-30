@@ -21,7 +21,7 @@ public class Cuadrado extends Figura {
     }
 
     @Override
-    public double Area() {
+    public double area() {
         double area = lado * lado;
         return area;
     }
