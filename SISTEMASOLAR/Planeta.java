@@ -1,8 +1,11 @@
 package SISTEMASOLAR;
 
+import java.util.ArrayList;
+
 public class Planeta extends Astro{
 
     private double distAlSol;
+    private ArrayList<Satelite> satelites = new ArrayList<>();
 
     public Planeta(String nombre, double masa, double tempMedia, double distAlSol) {
         super(nombre, masa, tempMedia);
@@ -17,5 +20,9 @@ public class Planeta extends Astro{
         this.distAlSol = distAlSol;
     }
 
-    
+    public void anyadirSatelite(String nombre, double masa, double tempMedia, double distAlPlaneta) {
+            Satelite satelite = new Satelite(nombre, masa, tempMedia, distAlPlaneta);
+            satelites.add(satelite);
+        
+    }
 }

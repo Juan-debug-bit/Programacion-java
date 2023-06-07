@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class SistemaSolar {
     private String nombre;
-    private ArrayList <Planeta> planetas = new ArrayList<>();
-    
+    private ArrayList<Planeta> planetas = new ArrayList<>();
+
     public SistemaSolar(String nombre) {
         this.nombre = nombre;
     }
@@ -17,18 +17,19 @@ public class SistemaSolar {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public boolean verPlaneta() {
-        for (int index = 0; index < planetas.size(); index++) {
-            System.out.println("Planeta: " + (index+1) + ": ");
-            System.out.println(planetas.get(index));
+        for (Planeta planeta : planetas) {
+            System.out.println(planeta.toString());       
         }
         return true;
     }
+
     public void anyadirPlaneta(String nombre, double masa, double tempMedia, double distAlSol) {
         Planeta planeta = new Planeta(nombre, masa, tempMedia, distAlSol);
         planetas.add(planeta);
     }
+
     public void eliminarPlaneta(String nombre) {
         for (Planeta planeta : planetas) {
             if (planeta.getNombre().equalsIgnoreCase(nombre)) {
@@ -36,5 +37,5 @@ public class SistemaSolar {
             }
         }
     }
-    
+
 }
