@@ -19,13 +19,13 @@ public class Examen2Ev {
 
             switch (opcion) {
                 case 1:
-
+                    vocalimetro();
                     break;
                 case 2:
-
+                    
                     break;
                 case 3:
-
+                    vocalimetro();
                     break;
                 case 4:
                     salir = true;
@@ -39,11 +39,11 @@ public class Examen2Ev {
     }
 
     public static void vocalimetro() {
-        Scanner user = new Scanner(System.in);
+        Scanner tcl = new Scanner(System.in);
         int contadorMax = 0;
         int contadorAct = 0;
         int palabraMax = 0;
-        String FraseOri = user.nextLine();
+        String FraseOri = tcl.nextLine();
         String[] porPalabras = FraseOri.split((" "));
         for (int i = 0; i < porPalabras.length; i++) {
             char[] letras = porPalabras[i].toCharArray();
@@ -60,27 +60,18 @@ public class Examen2Ev {
             }
             contadorAct = 0;
         }
-
-        contadorMax = 0;
-        contadorAct = 0;
-        palabraMax = 0;
-        FraseOri = user.nextLine();
-        porPalabras = FraseOri.split((" "));
-        for (int i = 0; i < porPalabras.length; i++) {
-            char[] letras = porPalabras[i].toCharArray();
-            char letra;
-            for (int j = 0; j < letras.length; j++) {
-                letra = letras[j];
-                if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
-                    contadorAct++;
-                }
-            }
-            if (contadorMax < contadorAct) {
-                contadorMax = contadorAct;
-                palabraMax = i;
-            }
-            contadorAct = 0;
-        }
         System.out.println(porPalabras[palabraMax]);
+        tcl.close();
+    }
+    public static void mediaValoresAltos(){
+        Scanner tcl = new Scanner(System.in);
+        int cuantos;
+        System.out.print("Introduce el tamanyo en nº del array: ");
+        cuantos = tcl.nextInt();
+        int [] numeros = new int[cuantos];
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("introduce número: " + numeros[i]);
+        }
+        tcl.close();
     }
 }

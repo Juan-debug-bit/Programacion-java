@@ -5,11 +5,11 @@ public class Ejer7 {
         //ponemos s en formato fecha
         String d = s.substring(0, 2);
         String m = s.substring(3, 5);
-        String a = s.substring(6, 9);
+        
 
         int dia = Integer.parseInt(d);
         int mes = Integer.parseInt(m);
-        int anyo = Integer.parseInt(a);
+        
 
         if (dia>=0 && dia<=31 && mes>=0 && mes<=12) {
             return true;
