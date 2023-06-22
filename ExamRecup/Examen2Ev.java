@@ -1,5 +1,6 @@
 package ExamRecup;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Examen2Ev {
@@ -10,19 +11,20 @@ public class Examen2Ev {
 
         while (!salir) {
             System.out.print("PROGRAMATOR");
-            int opcion = tcl.nextInt();
             System.out.println("------------");
             System.out.println("1. Media valores altos");
             System.out.println("2. cerimetro");
             System.out.println("3. Vocalimetro");
             System.out.println("4. SALIR");
-
+            System.out.println();
+            System.out.print("Introduce una opción: ");
+            int opcion = tcl.nextInt();
             switch (opcion) {
                 case 1:
-                    vocalimetro();
+                    mediaValoresAltos();
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
                     vocalimetro();
@@ -61,17 +63,24 @@ public class Examen2Ev {
             contadorAct = 0;
         }
         System.out.println(porPalabras[palabraMax]);
-        tcl.close();
     }
-    public static void mediaValoresAltos(){
+
+    public static void mediaValoresAltos() {
         Scanner tcl = new Scanner(System.in);
         int cuantos;
         System.out.print("Introduce el tamanyo en nº del array: ");
         cuantos = tcl.nextInt();
-        int [] numeros = new int[cuantos];
+        int[] numeros = new int[cuantos];
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print("introduce número: " + numeros[i]);
+            System.out.print("introduce número " + i + ": ");
+            numeros[i] = tcl.nextInt();
         }
-        tcl.close();
+        System.out.println(Arrays.toString(numeros));
+        
+        Arrays.sort(numeros);
+        int sum = numeros[numeros.length-1] + numeros[numeros.length-2] + numeros[numeros.length-3];
+        double media = sum / 3.0;
+
+        System.out.println("La media aritmética de los 3 valores más altos es: " + media);
     }
 }

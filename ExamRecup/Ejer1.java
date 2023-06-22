@@ -20,7 +20,7 @@ public class Ejer1 {
     public static void main(String[] args) {
         int[] arr = { 3, 7, 2, 9, 15, 25, 40, 3 };
         double med = mediana(arr);
-        System.out.println("La media es: " + med);
+        System.out.println("La mediana es: " + med);
     }
 
 }

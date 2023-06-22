@@ -1,14 +1,13 @@
-package POO;
+package ArrayList_Practicas.contactos;
 
 public class Contacto {
-    //Atributos
     private String nombre;
-    private String telefono;
+    private int num;
     private String correo;
-    
-    public Contacto(String nombre, String telefono, String correo) {
+
+    public Contacto(String nombre, int num, String correo) {
         this.nombre = nombre;
-        this.telefono = telefono;
+        this.num = num;
         this.correo = correo;
     }
 
@@ -20,12 +19,12 @@ public class Contacto {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public int getNum() {
+        return num;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public String getCorreo() {
@@ -38,8 +37,7 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto [nombre=" + nombre + ", telefono=" + telefono + ", correo=" + correo + "]";
+        return "Contacto [nombre=" + nombre + ", num=" + num + ", correo=" + correo + "]";
     }
 
 }
-
